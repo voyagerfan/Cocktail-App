@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<div >
+	[ <a href="/homepage">HOMEPAGE</a> | <a href="/browse">BROWSE</a> ]
+	</div>
+
+<h1>Browse a Cocktail by the First Letter</h1>
+<body>
+    <form action="/displayIndex" method="post">
+    
+    <label class="radio-inline">
+      <input type="radio" name="option" value="a">A
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="b">B
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="c">C
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="d">D
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="e">E
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="f">F
+    </label>
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="g">G
+    </label>
+    
+    <br>
+
+    <label class="radio-inline">
+      <input type="radio" name="option" value="h">H
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="i">I
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="j">J
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="k">K
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="l">L
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="m">M
+    </label>
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="n">N
+    </label>
+
+    <br>
+
+    <label class="radio-inline">
+      <input type="radio" name="option" value="o">O
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="p">P
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="q">Q
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="r">R
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="s">S
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="t">T
+    </label>
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="u">U
+    </label>
+
+    <br>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="v">V
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="w">W
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="x">X
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="y">Y
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="option" value="z">Z
+    </label>
+    
+
+    <br>
+    <input type="submit" value="Submit">
+    
+
+    
+    </form>
+
+    <br>
+    <br>
+    <h2> Indecies are Displayed Below</h2>
+
+    <br>
+    <br>
+    
+    <table>
+      <tbody>
+        
+          {% for element in indexData  %}
+            {% for key in element %}
+              {% if key == "strDrink"%}
+              <tr> 
+               
+                <td>
+                    <form action="/searchBrowse" method="post">
+            
+                      <input type="submit" id="indexBrowse" name="indexBrowse" value="{{element[key]}}">
+
+                    </form>
+                </td>
+              </tr> 
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        
+      </tbody>
+    </table>
+
+
+    
+</body>
+</html>
