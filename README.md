@@ -13,12 +13,14 @@ Welcome my Cocktail Application!
   - [Installation and Operation](#installation-and-operation)
     - [Option 1 - Run Locally:](#option-1---run-locally)
     - [Option 2 - Use Docker:](#option-2---use-docker)
+    - [App Operation:](#app-operation)
+  - [Attributions](#attributions)
 ## Overview
 
 This application allows users to explore a vast collection of cocktails. The user interface is designed to be intuitive and user-friendly, employing aspects of Cognitive Syle Heuristics (CSH). Users can search for drinks by name and filter the results to display specific information on the page, such as ingredients or instructions. Additionally, a browse-by-index feature (e.g., alphabetical) is available for users who prefer not to search by typing a name.
 
 > [!NOTE]
->This application originally utilized a microservice architecture for data access. However, the microservice is no longer being hosted. For demonstration purposes, the GET request on line 32 of app.py calls an external API directly. To integrate a future microservice, some code modifications would be necessary to re-establish the communication layer.
+>This application originally utilized a microservice architecture for the "Random Pick" functionality. However, the microservice is no longer being hosted at AWS. For demonstration purposes, the GET request on line 32 of app.py calls an external API directly. To integrate a future microservice, some code modifications would be necessary to re-establish the communication layer.
 
 
 ## App File Structure
@@ -44,18 +46,20 @@ This web applcation the following features:
 * <u>Docker Deployment Potential:</u> (Optional) This application can be easily deployed using Docker containers, making it readily accessible across different platforms.
 
 ## Screenshots
-Welcome Screen
+Home page
 
-![](./screenshots/welcomescreen.png)
+![](./screenshots/homescreen.png)
 
-Auth0 Login Screen
+Displayed data
 
-![](./screenshots/auth0login2.png)
+![](./screenshots/displayed_data.png)
 
+Browse by Index
 
-Callback screen with JWT infomation
+![](./screenshots/browse_by_index.png)
 
-![](./screenshots/JWTscreen2.png)
+Warning popup
+![](./screenshots/warning_popup.png)
 
 
 ## Technologies Used
@@ -75,8 +79,8 @@ Callback screen with JWT infomation
 
 1) Clone the repository to a directory of your choosing
 2) Using Visual Studio Code, open the project folder. **File** -> **Open Folder**
-3) Open and terminal. **Terminal** -> **New Terminal**
-4) Create a virual environment by entering the code in the terminal below
+3) Open a terminal. **Terminal** -> **New Terminal**
+4) Create a virual environment using the terminal command below
    ```bash
    python3 -m venv .venv
    ```
@@ -88,7 +92,7 @@ Callback screen with JWT infomation
    ```bash
    pip install -r requiremens.txt
    ```
-7) Ensure that the listener is configure to run locally. It should look like this.
+7) Ensure that the listener is configured to run locally. It should look like this.
 
    ```python
    # Listener
@@ -125,16 +129,16 @@ Callback screen with JWT infomation
    ```bash
    python3 -m venv .venv 
    ```
-5) open the app.py (in an IDE, a text editor or vim) and make ure the lister is configured as follows:
+5) open the app.py (in an IDE, text editor or vim) and make sure the lister is configured as follows:
    ```python
    # Listener
    if __name__ == "__main__":
 
       # run with docker 
-      #app.run(port=4000,debug=True, host='0.0.0.0')
+      app.run(port=4000,debug=True, host='0.0.0.0')
 
       # run locally
-      app.run(port=4000,debug=True, host='127.0.0.1')
+      #app.run(port=4000,debug=True, host='127.0.0.1')
    ```
 6) Using the terminal, create a Docker image
    ```bash
@@ -150,8 +154,17 @@ Callback screen with JWT infomation
    http:\\localhost:4000
    ```
 
+### App Operation:
+* You may enter a cocktail name in the drink name form, use "Browse By Index" or click the "Random Pick" buttom.
+  * Using "browse by index" will re-route you to the browse by index page.
+  * If using the browse by index page, click a letter and press submit. A list of cocktails matching the first letter will be displayed.
+  * Clicking on a cocktail will re-route you back to the homepage and your drink will be displayed in "Current Search Results"
+* Using either the drink form or the random button will populate the "Current Search Results" field.
+* If a cocktail is not found when using the drink name form, the "Current Search Results" field will indicate that it is not found and you may try again.
+* Once the "Current Search Results" field is populated with a valid cocktail, you may chose the data you want to display. Check 1 or all 3 checkboxes and click submit. The data you request will be displayed on the page.
 
 
-
+## Attributions
+Rigoberto Mejia - Project partner
 
 
