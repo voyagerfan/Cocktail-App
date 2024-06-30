@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
     <title>Document</title>
 </head>
 
@@ -13,41 +14,40 @@
 
     <h1>Search for a Cocktail You're interested In</h1>
     
-    <h3> Search by Name </h3>
-    <div> 
-        <form action="/searchName" method ="post">
-            <label for="drinkName">Drink Name:</label>
-            <input type="text" id="drinkName" name="drinkName"><br><br>
-            <input type="submit" value="Submit Search Name">
-        </form>
+    <div class="container1">
+        <div class="item">
+            <h3> Search by Name </h3>
+            <form action="/searchName" method ="post">
+                <label for="drinkName">Drink Name:</label>
+                <input type="text" id="drinkName" name="drinkName"><br><br>
+                <input type="submit" value="Submit Search Name">
+            </form>
+        </div>
+        <div class="item">
+            <h3> Browse By Index </h3>
+            <form action="/browse" method="post" id="browse">
+            <button type="submit" from="browse" value="submit"> Browse By Index</button>
+            </form>
+        </div>
+        <div class="item">
+            <h3> Be Adventureous! </h3>
+            <form action="/random" method="post" id="random">
+            <button type="submit" from="browse" value="submit"> Random Pick </button>
+            </form> 
+        </div>
+    </div>
+
+   
 
     <p> Current Search Results: {{drinkData}} </p>
 
-    </div>
-
-    <div style="position:absolute; right:1500px; top:85px">
-        <h3> Browse By Index </h3>
-        <form action="/browse" method="post" id="browse">
-        <button type="submit" from="browse" value="submit"> Browse By Index</button>
-        </form>
-    </div>
-
-    <div style="position:absolute; right:1300px; top:85px">
-        <h3> Be Adventureous! </h3>
-        <form action="/random" method="post" id="random">
-        <button type="submit" from="browse" value="submit"> Random Pick </button>
-        </form>
-    </div>
-
-    <div style="position:absolute; right:1325px; top:250px">
+    <div>
         <h3> Reset the Form </h3>
         <form action="/homepage" id="home">
         <button type="submit" from="browse" value="submit" title="Pressing here will reset the forms"> Reset form</button>
         </form>
+
     </div>
-
-
-    <div>
     
         <h2> What data are you interested in?</h2>
         

@@ -131,10 +131,10 @@ Callback screen with JWT infomation
    if __name__ == "__main__":
 
       # run with docker 
-      app.run(port=4000,debug=True, host='0.0.0.0')
+      #app.run(port=4000,debug=True, host='0.0.0.0')
 
       # run locally
-      # app.run(port=4000,debug=True, host='127.0.0.1')
+      app.run(port=4000,debug=True, host='127.0.0.1')
    ```
 6) Using the terminal, create a Docker image
    ```bash

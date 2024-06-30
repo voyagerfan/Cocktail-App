@@ -209,18 +209,18 @@ def random():
     f.truncate(0)
     f.close()
 
-    #drink = requests.get("https://yd3bs62ieg.execute-api.us-east-2.amazonaws.com/default/randCocktail")
+    # drink = requests.get("https://yd3bs62ieg.execute-api.us-east-2.amazonaws.com/default/randCocktail") //used with microservice
     drink = requests.get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 
 
-    #json data for the drink searched 
+    # json data for the drink searched 
     jsonData = drink.content
 
-    #parse the json data
+    # parse the json data
     parseData = json.loads(jsonData)
 
-    #drinkData = parseData['Drink Details']['Cocktail Name']
-    drinkData = parseData['drinks']['strDrink']
+    # drinkData = parseData['Drink Details']['Cocktail Name'] // used with microservice
+    drinkData = parseData['drinks'][0]['strDrink']
     f = open('sessiondata.txt', 'r+')
     f.write(drinkData)
     f.close()
