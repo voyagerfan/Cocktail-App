@@ -67,7 +67,7 @@ Warning popup
 
 - **Programming Languages:** Python, HTML
 - **Frameworks:** Flask
-- **Plaform** Docker
+- **Platforms:** Docker
 
 ## Installation and Operation
 
@@ -118,19 +118,19 @@ Warning popup
    ```
 
 ### Option 2 - Use Docker:
-*Prerequisites:* **Docker**, **Python**
+*Prerequisites:* **Docker**, **Python**, **Text Editor**
 
 >[!NOTE]
 >The following instructions are for macOS. You may follow the general outline of these instructions for other operating systems.
 
-1) Install and step up [Docker](https://docs.docker.com/desktop/install/mac-install/)
+1) Install and setup [Docker](https://docs.docker.com/desktop/install/mac-install/)
 2) Clone the repository
 3) Open a terminal and navigate to the cloned repo folder on your drive.
 4) Create a virtual environment
    ```bash
    python3 -m venv .venv 
    ```
-5) open the app.py (in an IDE, text editor or vim) and make sure the lister is configured as follows:
+5) Open app.py (in an IDE, text editor or vim) and make sure the lister is configured as follows:
    ```python
    # Listener
    if __name__ == "__main__":
@@ -156,13 +156,13 @@ Warning popup
    ```
 
 ### App Operation:
-* You may enter a cocktail name in the drink name form, use "Browse By Index" or click the "Random Pick" buttom.
+* You may enter a cocktail name in the drink name form, use "Browse By Index" or click the "Random Pick" button.
   * Using "browse by index" will re-route you to the browse by index page.
-  * If using the browse by index page, click a letter and press submit. A list of cocktails matching the first letter will be displayed.
+  * If using the browse by index page, click a letter and press "submit". A list of cocktails matching the first letter will be displayed.
   * Clicking on a cocktail will re-route you back to the homepage and your drink will be displayed in "Current Search Results"
 * Using either the drink form or the random button will populate the "Current Search Results" field.
 * If a cocktail is not found when using the drink name form, the "Current Search Results" field will indicate that it is not found and you may try again.
-* Once the "Current Search Results" field is populated with a valid cocktail, you may chose the data you want to display. Check 1 or all 3 checkboxes and click submit. The data you request will be displayed on the page.
+* Once the "Current Search Results" field is populated with a valid cocktail, you may chose the data you want to display. Check 1, 2 or all 3 checkboxes and click "submit". The data you request will be displayed on the page.
 
 
 ## Attributions
