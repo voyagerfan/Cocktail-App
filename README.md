@@ -20,7 +20,7 @@ Welcome my Cocktail Application!
 This application allows users to explore a vast collection of cocktails. The user interface is designed to be intuitive and user-friendly, employing aspects of Cognitive Syle Heuristics (CSH). Users can search for drinks by name and filter the results to display specific information on the page, such as ingredients or instructions. Additionally, a browse-by-index feature (e.g., alphabetical) is available for users who prefer not to search by typing a name.
 
 > [!NOTE]
->This application originally utilized a microservice architecture for the "Random Pick" functionality. However, the microservice is no longer being hosted at AWS. For demonstration purposes, the GET request on line 32 of app.py calls an external API directly. To integrate a future microservice, some code modifications would be necessary to re-establish the communication layer.
+>This application originally utilized a microservice architecture for the "Random Pick" functionality. However, the microservice is no longer being hosted at AWS. For demonstration purposes, the GET request on line 213 of app.py calls an external API directly. To integrate a future microservice, some code modifications would be necessary to re-establish the communication layer.
 
 
 ## App File Structure
